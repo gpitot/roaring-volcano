@@ -1,8 +1,94 @@
 html, body {
     margin:0;
     padding:0;
+    background:#eee;
 }
 
 * {
     box-sizing:border-box;
+}
+
+
+
+#banner {
+    background:black;
+    width:100%;
+    height:100vh;
+
+
+    .inner-items {
+        position:absolute;
+        top:150px;
+        left:250px;
+        width:300px;
+        display:flex;
+        flex-direction: column;
+
+        .logo {
+            height:200px;
+            background:tomato;
+            margin-bottom:50px;
+        }
+
+        .cta {
+            height:200px;
+            background:orange;
+        }
+    }
+}
+
+
+#booking {
+    background:#eee;
+    padding:50px 100px;
+
+    display:none;
+    /* until i get booking set up i will just use booking.com */
+}
+
+#activities {
+    padding : 50px 100px;
+
+    .options {
+        width:100%;
+        
+        display:flex;
+
+
+        .item {
+            width:350px;
+            position: relative;
+            img {
+                width:100%;
+                position: relative;
+                margin:auto;
+                height:auto;
+                display:block;
+            }
+
+            .title {
+                text-align:center;
+                position:absolute;
+                bottom:0;
+                width:100%;
+                padding:8px;
+                background:rgba(255, 255, 255, 0.4);
+            }
+        }
+    }
+}
+
+#northface {
+    position: relative;
+	padding-bottom: 45.5%; 
+	padding-top: 25px;
+    height: 0;
+    
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
