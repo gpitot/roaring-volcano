@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,800&display=swap');
+
 html, body {
     margin:0;
     padding:0;
     background:#eee;
+    color:#222;
+    font-family: 'Barlow', sans-serif;
+
 }
 
 * {
@@ -9,30 +14,89 @@ html, body {
 }
 
 
+$mobile : 800px;
 
-#banner {
-    background:black;
+@import "gallery.scss";
+
+
+
+
+
+#banner, #house-gallery {
+    
+    background-size:cover;
+    position: relative;
     width:100%;
     height:100vh;
 
 
+    @media (max-width:$mobile) {
+        height:400px;
+    }
+
+
+    .images {
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+
+        .item {
+            width:100%;
+            height:100%;
+            position:absolute;
+            top:0;
+            left:0;
+            opacity:0;
+
+            transition: all 0.7s ease;
+
+            img {
+                width:100%;
+                height:100%;
+                object-fit:cover;
+            }
+        }
+    }
+
+
     .inner-items {
         position:absolute;
-        top:150px;
-        left:250px;
-        width:300px;
+        top:70px;
+        right:100px;
+        width:700px;
+        max-width:calc(100% - 40px);
         display:flex;
         flex-direction: column;
+        
 
-        .logo {
-            height:200px;
-            background:tomato;
-            margin-bottom:50px;
+        @media (max-width:$mobile) {
+            right:auto;
+            left:50%;
+            transform:translateX(-50%);
+
+        }
+
+        h1.title {
+            color:white;
+            font-size:80px;
+            
+            opacity:0.8;
+            @media (max-width:$mobile) {
+                font-size:40px;
+            }
         }
 
         .cta {
-            height:200px;
+            align-self: flex-start;
+            border:none;
             background:orange;
+            padding:15px 35px;
+            border-radius:10px;
+            font-weight:800;
+            color:inherit;
+            text-decoration: none;
         }
     }
 }
@@ -46,43 +110,13 @@ html, body {
     /* until i get booking set up i will just use booking.com */
 }
 
-#activities {
-    padding : 50px 100px;
 
-    .options {
-        width:100%;
-        
-        display:flex;
-
-
-        .item {
-            width:350px;
-            position: relative;
-            img {
-                width:100%;
-                position: relative;
-                margin:auto;
-                height:auto;
-                display:block;
-            }
-
-            .title {
-                text-align:center;
-                position:absolute;
-                bottom:0;
-                width:100%;
-                padding:8px;
-                background:rgba(255, 255, 255, 0.4);
-            }
-        }
-    }
-}
 
 #northface {
     position: relative;
 	padding-bottom: 45.5%; 
 	padding-top: 25px;
-    height: 0;
+    height: 100vh;
     
     iframe {
         position: absolute;
@@ -92,3 +126,26 @@ html, body {
         height: 100%;
     }
 }
+
+
+
+
+
+.info {
+    
+    padding:40px;
+    background:#eee;
+
+    .inner {
+        width:600px;
+        max-width:100%;
+        margin:auto;
+        text-align:center;
+
+        h3 {
+           font-size:30px;
+        }
+    }
+}
+
+

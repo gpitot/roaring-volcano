@@ -1,0 +1,31 @@
+
+
+.gallery {
+    display:flex;
+    flex-flow:row wrap;
+    height:100vh;
+
+    @media (max-width:$mobile) {
+        height:auto;
+
+       
+    }
+
+    .item {
+        flex: 0 0 50%;
+        height: 100%;
+
+        @media (max-width:$mobile) {
+            flex: 0 0 100%;
+        }
+        img {
+            width:100%;
+            display:block;
+            height:100%;
+            object-fit:cover;
+        }
+    }
+}
+
+
+
